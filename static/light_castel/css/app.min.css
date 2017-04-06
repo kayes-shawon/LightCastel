@@ -81,7 +81,7 @@ body{ font-family: 'Roboto', sans-serif; }
 .lc_footer{ margin-bottom: 0; border: none; color: #D0D2D2; border-radius: 0; border: none; padding: 0 !important; }
 .lc_footer .footer_header{ margin-top: 0; color: #D0D2D2; font-size: 1.5em; }
 .lc_footer_top{ padding: 3em 0; background-color: #272C2F; }
-.lc_footer_top .ls_about_us{ padding-left: 4em !important; padding-right: 1.5em; }
+.lc_footer_top .ls_about_us{ padding-left: 8em !important; padding-right: 1.5em; }
 .lc_footer_top .ls_about_us .list-unstyled{ margin-top: 2em; }
 .lc_footer_top .ls_about_us .list-unstyled li{ margin-bottom: 1em; }
 .lc_footer_top .lc_subscribe_form{ margin-top: 2.5em; }
