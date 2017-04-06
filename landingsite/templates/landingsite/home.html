@@ -1,0 +1,455 @@
+{% extends 'landingsite/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<!-- Section -> Home -->
+<section id="Home">
+    <div class="ta-slider-warraper">
+    
+        <div id="__Slider__Home" class="owl-carousel">
+            {% for slider in main_sliders %}
+            
+            <!-- Slider -> Item -->
+            <div class="item">
+
+                <!-- Slider Image -->
+                <figure style=""><img src="{{ slider.image.url }}" alt="image description"></figure>
+                <!-- End Slider Image -->
+                
+                <!-- Slider -> Inner -->
+                <div class="ta-slider-inner">
+                    <div class="container inner-table">
+                        <div class="inner-table-cell">
+                            
+                            <!--slide content area-->
+                            {% if slider.centered %}
+                            <div class="slide-caption slide-center">
+                                <div>
+                                    <h1 class="slider-lead-headline text-shadow font-railway">{{ slider.title }}</h1>
+                                    <div class="description">
+                                        <p class="slider-child-headline text-shadow">{{ slider.content }}</p>
+                                    </div>
+                                    <a class="btn btn-rounded" href="case-studies">Read More</a>
+                                </div>
+                                <!--/slide box style-->
+                            </div>
+                            {% else %}
+                            <div class="slide-caption slide-left">
+                                <div class="slide-inner-box carousel-slide-title-text">
+                                    <h1 class="slider-lead-headline text-shadow">{{ slider.title }}</h1>
+                                    <div class="description carousel-slide-description-text text-shadow">
+                                        <h1 class="carousel-description-span">{{ slider.content }}</h1>
+                                    </div>
+                                    <a class="btn btn-rounded" href="#">Read More</a></div>
+                                <!--/slide box style-->
+                            </div>
+                            {% endif %}
+                            <!--/slide content area-->
+                       
+                        </div>
+                    </div>
+                </div>
+                <!-- End Slider -> Inner -->
+
+            </div>
+            <!-- End Slider -> Item -->
+
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+<!-- End Section -> Home -->
+
+
+<!-- Section -> Activities -->
+<section class="section-activities">
+    <div class="container text-center">
+        
+        <img src="{% static 'light_castel/img/favicon.png' %}" alt="Light Castel Brand Mini Logo" width="60px">
+
+        <h2 class="activity-details font-Roboto-300">
+            At <span class="text-orange">Light</span><span>Castle</span>, we combine data, analytics and technology to solve real world
+            problems. Having data access of 30+ industries, our expertise lies in developing innovative
+            social enterprise models, consulting for enterprises, and building world-class data platforms.
+        </h2>
+        
+        <p><span><a class="btn btn-tislider" href="case-studies">Learn More</a></span></p>
+
+    </div>
+</section>
+<!-- End Section -> Activities -->
+
+
+<!-- Section -> Services -->
+<section id="Services" class="section section-services">
+    <div class="container">
+        
+        <!-- Service - Headline -->
+        <div class="row">
+            <div class="col-md-12 col-sm-12 wow fadeInDown left_side">
+                <h3 class="ta-heading-inner">
+                    <span>Services</span>
+                </h3>
+            </div>
+        </div>
+        <!-- End Service - Headline -->
+
+
+        <div class="row">
+
+            <div class="owl-carousel owl-theme custom-slider" id="slider_service">
+                
+                {% for slider in services_sliders %}
+                <div class="item">
+                    {% if slider.0 %}
+                    <div class="col-sm-4">
+                        <div class="ta-portfolio-box zoomIn animated">
+                            <figure>
+                                <a href="#">
+                                    <img alt="portfolio1" class="img-responsive" src="{{slider.0.image.url}}">
+                                </a>
+                                <div class="overlay">
+                                    <div class="overlay-description text-center  padding-20" style="margin-top: 40px">
+                                        <a class="btn btn-tislider btn-blue-on-hvr" href="#">VIEW PROJECTS</a>
+                                    </div>
+                                </div>
+                            </figure>
+                            
+                            <h3 class="services-card-title-area">{{slider.0.title}}</h3>
+                            <p class="ta-portfolio-category services-card-description-area text-light-dark">{{slider.0.content}}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if slider.1 %}
+                    <div class="col-sm-4">
+                        <div class="ta-portfolio-box zoomIn animated">
+                            <figure>
+                                <a href="#">
+                                    <img alt="portfolio1" class="img-responsive" src="{{slider.1.image.url}}">
+                                </a>
+                                <div class="overlay">
+                                    <div class="overlay-description text-center  padding-20" style="margin-top: 40px">
+                                        <a class="btn btn-tislider btn-blue-on-hvr" href="#">VIEW PROJECTS</a>
+                                    </div>
+                                </div>
+                            </figure>
+                            
+                            <h3 class="services-card-title-area">{{slider.1.title}}</h3>
+                            <p class="ta-portfolio-category services-card-description-area text-light-dark">{{slider.1.content}}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if slider.2 %}
+                    <div class="col-sm-4">
+                        <div class="ta-portfolio-box zoomIn animated">
+                            <figure>
+                                <a href="#">
+                                    <img alt="portfolio1" class="img-responsive" src="{{slider.2.image.url}}">
+                                </a>
+                                <div class="overlay">
+                                    <div class="overlay-description text-center  padding-20" style="margin-top: 40px">
+                                        <a class="btn btn-tislider btn-blue-on-hvr" href="#">VIEW PROJECTS</a>
+                                    </div>
+                                </div>
+                            </figure>
+                            
+                            <h3 class="services-card-title-area">{{slider.2.title}}</h3>
+                            <p class="ta-portfolio-category services-card-description-area text-light-dark">{{slider.2.content}}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+        <!-- End Slider - Services -->
+
+    </div>
+</section>
+<!-- End Section -> Services -->
+
+
+<!-- Section -> Casestudies -->
+<section class="section section-casestudies">
+    <div class="container">
+        
+        <!-- Case Studies - Headline -->
+        <div class="row">
+            <div class="col-md-12 col-sm-12 wow fadeInDown left_side">
+                <h3 class="ta-heading-inner">
+                    <span>Case Studies</span>
+                </h3>
+            </div>
+        </div>
+        <!-- End Case Studies - Headline -->
+
+        <div class="row">
+            
+            <div class="owl-carousel owl-theme custom-slider" id="slider_casestudies">
+                
+                {% for slider in case_studies_sliders %}
+                <div class="item">
+                    {% if slider.0 %}
+                    <div class="col-sm-4">
+                        <div class="ta-portfolio-box zoomIn animated">
+                            <figure>
+                                <a href="#">
+                                    <img alt="portfolio1" class="img-responsive" src="{{slider.0.image.url}}">
+                                </a>
+                                <div class="overlay">
+                                    <div class="overlay-description text-center  padding-20" style="margin-top: 40px">
+                                        <a class="btn btn-tislider btn-blue-on-hvr" href="#">VIEW PROJECTS</a>
+                                    </div>
+                                </div>
+                            </figure>
+                            
+                            <h3 class="services-card-title-area">{{slider.0.title}}</h3>
+                            <p class="ta-portfolio-category services-card-description-area text-light-dark">{{slider.0.content}}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if slider.1 %}
+                    <div class="col-sm-4">
+                        <div class="ta-portfolio-box zoomIn animated">
+                            <figure>
+                                <a href="#">
+                                    <img alt="portfolio1" class="img-responsive" src="{{slider.1.image.url}}">
+                                </a>
+                                <div class="overlay">
+                                    <div class="overlay-description text-center  padding-20" style="margin-top: 40px">
+                                        <a class="btn btn-tislider btn-blue-on-hvr" href="#">VIEW PROJECTS</a>
+                                    </div>
+                                </div>
+                            </figure>
+                            
+                            <h3 class="services-card-title-area">{{slider.1.title}}</h3>
+                            <p class="ta-portfolio-category services-card-description-area text-light-dark">{{slider.1.content}}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if slider.2 %}
+                    <div class="col-sm-4">
+                        <div class="ta-portfolio-box zoomIn animated">
+                            <figure>
+                                <a href="#">
+                                    <img alt="portfolio1" class="img-responsive" src="{{slider.2.image.url}}">
+                                </a>
+                                <div class="overlay">
+                                    <div class="overlay-description text-center  padding-20" style="margin-top: 40px">
+                                        <a class="btn btn-tislider btn-blue-on-hvr" href="#">VIEW PROJECTS</a>
+                                    </div>
+                                </div>
+                            </figure>
+                            
+                            <h3 class="services-card-title-area">{{slider.2.title}}</h3>
+                            <p class="ta-portfolio-category services-card-description-area text-light-dark">{{slider.2.content}}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+        
+        <!-- View All Button -->
+        <div class="row">
+            <div class="text-center"><a class="btn btn-tislider">View All</a></div>
+        </div>
+
+    </div>
+</section>
+<!-- End Section -> Casestudies -->
+
+
+<!-- Section -> Initiative -->
+<section class="section section-initiative">
+    <div class="container">
+        
+        <!-- Initiative - Headline -->
+        <div class="row">
+            <div class="col-md-12 col-sm-12 wow fadeInDown left_side">
+                <h3 class="ta-heading-inner"><span>Initiatives</span></h3>
+            </div>
+        </div>
+        <!-- End Initiative - Headline -->
+
+        <div class="row">
+            
+            <div class="owl-carousel owl-theme custom-slider" id="slider_initiative">
+                
+                {% for slider in initiatives_sliders %}
+                <div class="item">
+                    {% if slider.0 %}
+                    <div class="col-sm-4">
+                        <div class="ta-portfolio-box zoomIn animated">
+                            <figure>
+                                <a href="#">
+                                    <img alt="portfolio1" class="img-responsive" src="{{slider.0.image.url}}">
+                                </a>
+                                <div class="overlay">
+                                    <div class="overlay-description text-center  padding-20" style="margin-top: 40px">
+                                        <a class="btn btn-tislider btn-blue-on-hvr" href="#">VIEW PROJECTS</a>
+                                    </div>
+                                </div>
+                            </figure>
+                            
+                            <h3 class="services-card-title-area">{{slider.0.title}}</h3>
+                            <p class="ta-portfolio-category services-card-description-area text-light-dark">{{slider.0.content}}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if slider.1 %}
+                    <div class="col-sm-4">
+                        <div class="ta-portfolio-box zoomIn animated">
+                            <figure>
+                                <a href="#">
+                                    <img alt="portfolio1" class="img-responsive" src="{{slider.1.image.url}}">
+                                </a>
+                                <div class="overlay">
+                                    <div class="overlay-description text-center  padding-20" style="margin-top: 40px">
+                                        <a class="btn btn-tislider btn-blue-on-hvr" href="#">VIEW PROJECTS</a>
+                                    </div>
+                                </div>
+                            </figure>
+                            
+                            <h3 class="services-card-title-area">{{slider.1.title}}</h3>
+                            <p class="ta-portfolio-category services-card-description-area text-light-dark">{{slider.1.content}}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if slider.2 %}
+                    <div class="col-sm-4">
+                        <div class="ta-portfolio-box zoomIn animated">
+                            <figure>
+                                <a href="#">
+                                    <img alt="portfolio1" class="img-responsive" src="{{slider.2.image.url}}">
+                                </a>
+                                <div class="overlay">
+                                    <div class="overlay-description text-center  padding-20" style="margin-top: 40px">
+                                        <a class="btn btn-tislider btn-blue-on-hvr" href="#">VIEW PROJECTS</a>
+                                    </div>
+                                </div>
+                            </figure>
+                            
+                            <h3 class="services-card-title-area">{{slider.2.title}}</h3>
+                            <p class="ta-portfolio-category services-card-description-area text-light-dark">{{slider.2.content}}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+        
+        <!-- View All Button -->
+        <div class="row">
+            <div class="text-center"><a class="btn btn-tislider">View All</a></div>
+        </div>
+
+    </div>
+</section>
+<!-- End Section -> Initiative -->
+
+<!-- Senction - Clients -->
+<section class="section section-clients">
+    <div class="container">
+        
+        <!-- Section Headline -->
+        <h3 class="ta-heading-inner"><span>Clients</span></h3>
+
+        <!-- Slider -> Clients -->
+        <div class="row">
+            <div id="slider_clients" class="owl-carousel owl-theme custom-slider">
+                {% for client in clients_sliders %}
+                <div class="item">
+                    {% if client.0 %}
+                    <div class="col-sm-3">
+                        <a href="#">
+                            <img src="{{client.0.image.url}}" alt="" class="img-responsive">
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% if client.1 %}
+                    <div class="col-sm-3">
+                        <a href="#">
+                            <img src="{{client.1.image.url}}" alt="" class="img-responsive">
+                        </a>
+                    </div>
+                    {% endif %}
+
+                    {% if client.2 %}
+                    <div class="col-sm-3">
+                        <a href="#">
+                            <img src="{{client.2.image.url}}" alt="" class="img-responsive">
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% if client.3 %}
+                    <div class="col-sm-3">
+                        <a href="#">
+                            <img src="{{client.3.image.url}}" alt="" class="img-responsive">
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- End Slider -> Clients -->
+
+    </div>
+</section>
+<!-- End Section - Clients -->
+
+<!-- Section -> Testimonials -->
+<section class="section-testimonials bg-f8">
+    <div class="testimonials-section">
+        <div class="overlay">
+            
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 wow fadeInDown left_side">
+                        <h3 class="ta-heading-inner text-left"><span>Words of Encouragement</span></h3>
+                    </div>
+                </div>
+
+                <div class="content-testimonials">
+                    <div id="slider_testimonials" class="owl-carousel owl-theme">
+                        
+                        {% for slider in words_of_encouragement_sliders %}
+                        <div class="item">
+                            <div class="testimonials_qute bounceInUp animated"><span
+                                    class="sub-qute">{{slider.content}}</span>
+                                <span class="ta-client"><img src="{{slider.person_image.url}}" alt="client"/></span>
+                                <div class="ta-client-qute">
+                                    <p class="user-title">{{slider.person_name}}</p>
+                                    <p class="user-designation text-light-dark">{{slider.person_company}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Section -> Testimonials -->
+
+{% endblock content %}

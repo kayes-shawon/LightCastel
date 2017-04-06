@@ -1,0 +1,211 @@
+{% extends 'landingsite/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!-- Page -> Media -->
+<div class="page-about">
+    
+    <!-- Page Banner -->
+    <div class="page-banner" style="background: url({% static 'light_castel/img/page_banners/about_page_banner_bg.png' %}) no-repeat center;">
+        <h1 class="page-banner-title font-Roboto_Slab">Media</h1>
+    </div>
+    <!-- End Page Banner -->
+
+    <!-- Section - Recognation -->
+    <section class="section section-recognation">
+        <div class="container">
+            
+            <!-- section-title -->
+            <h3 class="section-title">Recognition</h3>
+            <!-- .section-title -->
+            
+            <!-- Slider -> Recognation -->
+            <div class="row">
+                <div class="owl-carousel owl-theme custom-slider" id="slider_recognation">
+                    {% for news in magazines %}
+                        <div class="item">
+                            <div class="col-sm-4">
+                                <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
+                                    <figure>
+                                        <a href="#url" target="_blank">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                        </a>
+                                    </figure>
+                                    <!--<h4><a href="#">Project One</a></h4>-->
+                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
+                                    <figure>
+                                        <a href="#url" target="_blank">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                        </a>
+                                    </figure>
+                                    <!--<h4><a href="#">Project One</a></h4>-->
+                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
+                                    <figure>
+                                        <a href="#url" target="_blank">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                        </a>
+                                    </figure>
+                                    <!--<h4><a href="#">Project One</a></h4>-->
+                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- End Slider Recognation -->
+
+        </div>
+    </section>
+    <!-- End Section - Recognation -->
+
+    <!-- Section - Knowledge -->
+    <section class="section section-knowledge">
+        <div class="container">
+            
+            <!-- section-title -->
+            <h3 class="section-title">Knowledge</h3>
+            <!-- .section-title -->
+            
+            <!-- Slider -> Knowledge -->
+            <div class="row">
+                <div class="owl-carousel owl-theme custom-slider" id="slider_knowledge">
+                    {% for news in op_eds %}
+                        <div class="item">
+                            <div class="col-sm-4">
+                                <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
+                                    <figure>
+                                        <a href="#url" target="_blank">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                        </a>
+                                    </figure>
+                                    <!--<h4><a href="#">Project One</a></h4>-->
+                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
+                                    <figure>
+                                        <a href="#url" target="_blank">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                        </a>
+                                    </figure>
+                                    <!--<h4><a href="#">Project One</a></h4>-->
+                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
+                                    <figure>
+                                        <a href="#url" target="_blank">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                        </a>
+                                    </figure>
+                                    <!--<h4><a href="#">Project One</a></h4>-->
+                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- End Slider Knowledge -->
+
+        </div>
+    </section>
+    <!-- End Section - Knowledge -->
+
+    <!-- Section - Interview -->
+    <section class="section section-interview">
+        <div class="container">
+            
+            <!-- section-title -->
+            <h3 class="section-title">Interview</h3>
+            <!-- .section-title -->
+            
+            <!-- Slider -> Interview -->
+            <div class="row">
+                <div class="owl-carousel owl-theme custom-slider" id="slider_interview">
+                    {% for news in interviews %}
+                        <div class="item">
+                            <div class="col-sm-4">
+                                <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
+                                    <figure>
+                                        <a href="#url" target="_blank">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                        </a>
+                                    </figure>
+                                    <!--<h4><a href="#">Project One</a></h4>-->
+                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
+                                    <figure>
+                                        <a href="#url" target="_blank">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                        </a>
+                                    </figure>
+                                    <!--<h4><a href="#">Project One</a></h4>-->
+                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
+                                    <figure>
+                                        <a href="#url" target="_blank">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                        </a>
+                                    </figure>
+                                    <!--<h4><a href="#">Project One</a></h4>-->
+                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- End Slider Interview -->
+
+        </div>
+    </section>
+    <!-- End Section - Interview -->
+
+</div>
+<!-- End Page Media -->
+
+{% endblock content %}

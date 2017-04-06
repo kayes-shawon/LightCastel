@@ -1,0 +1,260 @@
+{% extends 'landingsite/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<div class="page-about">
+            
+    <!-- Page Banner -->
+    <div class="page-banner" style="background: url({% static 'light_castel/img/page_banners/about_page_banner_bg.png' %}) no-repeat center;">
+        <h1 class="page-banner-title font-Roboto_Slab">About us</h1>
+    </div>
+    <!-- End Page Banner -->
+    
+    <!-- section-people -->
+    <section class="section section-people">
+        <div class="container">
+            
+            <!-- section-title -->
+            <h3 class="section-title">People</h3>
+            <!-- .section-title -->
+            
+            <!-- section-tab -->
+            <div role="tabpanel">
+
+                <!-- nav-tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#management" aria-controls="management" role="tab" data-toggle="tab">Management</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#advisor" aria-controls="advisor" role="tab" data-toggle="tab">Advisors</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#patron" aria-controls="patron" role="tab" data-toggle="tab">Patrons</a>
+                    </li>
+                </ul>
+                <!-- .nav-tabs -->
+            
+                <!-- tab-content -->
+                <div class="tab-content">
+                    
+                    <!-- tab_content-management -->
+                    <div role="tabpanel" id="management" class="tab-pane active">
+                        
+                        <div class="row">
+                            
+                            {% for people in management_people %}
+                            <div class="col-sm-3 fadeInUp animated">
+                                
+                                <a data-toggle="modal" class="member_talked" href="#modal-id" 
+                                    data-member_talked='{"img" : "{{people.photo.url}}", "full_name" : "{{people.name}}", "designation" : "{{people.designation}}" }', data-message="{{people.message}}"
+                                >
+                                    <div class="thumbnail thumbnail-overlay">
+                                        
+                                        <img src="{{people.photo.url}}" alt="">
+                                        
+                                        <div class="caption caption-up text-center">
+                                            
+                                            <div class="icon">
+                                                <i class="fa fa-lg fa-plus"></i>
+                                            </div>
+
+                                            <h4 class="user-name">{{people.name}}</h4>
+                                            <h4 class="user-post">{{people.designation}}</h4> 
+
+                                        </div>
+
+                                    </div>
+                                </a>
+                                
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+
+                    </div>
+
+                    <!-- tab_content-advisor -->
+                    <div role="tabpanel" id="advisor" class="tab-pane">
+                        
+                        <div class="row">
+                            
+                            {% for people in management_people %}
+                            <div class="col-sm-3 fadeInUp animated">
+                                
+                                <a data-toggle="modal" class="member_talked" href="#modal-id" 
+                                    data-member_talked='{"img" : "{{people.photo.url}}", "full_name" : "{{people.name}}", "designation" : "{{people.designation}}" }', data-message="{{people.message}}"
+                                >
+                                    <div class="thumbnail thumbnail-overlay">
+                                        
+                                        <img src="{{people.photo.url}}" alt="">
+                                        
+                                        <div class="caption caption-up text-center">
+                                            
+                                            <div class="icon">
+                                                <i class="fa fa-lg fa-plus"></i>
+                                            </div>
+
+                                            <h4 class="user-name">{{people.name}}</h4>
+                                            <h4 class="user-post">{{people.designation}}</h4> 
+
+                                        </div>
+
+                                    </div>
+                                </a>
+                                
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+
+                    </div>
+                    
+                    <!-- tab_content-patron -->
+                    <div role="tabpanel" id="patron" class="tab-pane">
+                        
+                         <div class="row">
+                            
+                            {% for people in management_people %}
+                            <div class="col-sm-3 fadeInUp animated">
+                                
+                                <a data-toggle="modal" class="member_talked" href="#modal-id" 
+                                    data-member_talked='{"img" : "{{people.photo.url}}", "full_name" : "{{people.name}}", "designation" : "{{people.designation}}" }', data-message="{{people.message}}"
+                                >
+                                    <div class="thumbnail thumbnail-overlay">
+                                        
+                                        <img src="{{people.photo.url}}" alt="">
+                                        
+                                        <div class="caption caption-up text-center">
+                                            
+                                            <div class="icon">
+                                                <i class="fa fa-lg fa-plus"></i>
+                                            </div>
+
+                                            <h4 class="user-name">{{people.name}}</h4>
+                                            <h4 class="user-post">{{people.designation}}</h4> 
+
+                                        </div>
+
+                                    </div>
+                                </a>
+                                
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+
+                    </div>
+                </div>
+                <!-- .tab-content -->
+            </div>
+            <!-- .section-tab -->
+
+        </div>
+    </section>
+    <!-- .section-people -->
+
+    <!-- Section Values -->
+    <section class="section section-values">
+        <div class="container">
+            <!-- Headline -->
+            <h3 class="ta-heading-inner m-t-0"><span>Values</span></h3>
+            
+            <ul class="list-unstyled about-values-lists" style="padding-left: 0px;">
+                <li>
+                    <h6>
+                        <b>Entrepreneurial Spirit - </b> We are entrepreneurs ourselves. We are passionate about
+                    the work we do. Our hope is to make this spirit contagious and, therefore, actively promote
+                    developing an entrepreneurial mindset among others, too.
+                    </h6>
+                </li>
+                <li>
+                    <h6><b>Ethics - </b> We internalize a strong sense of ethical practices in what we do.</h6>
+                </li>
+                <li>
+                    <h6><b>Excellence - </b> We merit quality over quantity. Emphasis on quality renders
+                    professionalism.</h6>
+                </li>
+                <li>
+                    <h6><b>Inquisitiveness – </b> We remain insatiable in our thirst for new knowledge.
+                    Curiosity doesn’t kill us, rather lets us thrive.</h6>
+                </li>
+                <li>
+                    <h6><b>Simplicity – </b> We love to keep things simple. We strive to make this theme
+                    recurring in every aspect of our lives, be it personal or professional.</h6>
+                </li>
+                <li>
+                    <h6>
+                        <b>Transparency - </b> We foster an open culture of communication. Transparency
+                    establishes trust.</h6>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- End Section Values -->
+
+    <!-- Section -> Stories -->
+    <section class="section section-stories">
+        <div class="container">
+            
+            <!-- Headline -->
+            <h3 class="ta-heading-inner m-t-0"><span>Story</span></h3>
+            <!-- End Headline -->
+
+            <!-- Story Cover Image -->
+            <a href="#" class="thumbnail">
+                <img class="img-responsive" src="{% static 'images/team.jpg' %}" style="width: 100%;">
+            </a>
+            <!-- End Story Cover Image -->
+            
+            <!-- Story Details -->
+            <div class="row">
+                <div class="col-sm-12 margin-top-20">
+                    <h6 class="text-line-height">
+                        <p>
+                        In today’s fast moving world, the need to stay connected with data and technology is critical for success. And that’s why we exist.
+                        </p>
+
+                        <p>
+                        Founded in 2013, LightCastle Partners has established itself as a credible name in the data space – to help unlock data-driven solutions to myriad real world challenges faced by organizations in Bangladesh. Our ability to remain passionate about excellence in our work and to support our clientele in the best possible way has played a crucial role in the growing recognition of our humble initiative.
+                        </p>
+
+                        <p>
+                        We work at the intersection of data, development and technology. Our unique approach to combining data, analytics and technology to solve problems allows us to design and implement interventions quickly, efficiently and objectively.
+                        </p>
+                        
+                        <p>
+                        Our team have backgrounds in Technology, Consulting, Financial Inclusion, Project Implementation and Non-profit Development commensurate with education from top business schools in U.S.A and Bangladesh.
+                        </p>
+                    </h6>
+                </div>
+            </div>
+            <!-- End Story Details -->
+
+        </div>
+    </section>
+    <!-- End Section -> Stories -->
+
+
+</div>
+
+
+<!-- Global Modal -->
+<div class="modal fade" id="modal-member">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</div>
+<!-- End Global Modal -->
+
+{% endblock content %}
+
+

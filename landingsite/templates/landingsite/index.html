@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lightcastle Partners</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--SEO Meta Tags-->
+    <meta content='Description Your Blog Here' name='description'/>
+    <meta content='Keywords Your Blog Here' name='keywords'/>
+    <meta content='index, follow' name='robots'/>
+    <!--/SEO Meta Tags-->
+    <!-- ==================== CSS ====================-->
+    <!--Bootstrap-->
+    	    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+    <link href="http://fonts.googleapis.com/css?family=Lato:200" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:200" rel="stylesheet">
+    <link href="{% static 'css/hamburger.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/sidebar.css' %}" rel="stylesheet">
+
+    <!-- Colors -->
+    <!-- Default Color / Currently Using -->
+    <link href="{% static 'css/colors/default.css' %}" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Montserrat Font -->
+    <link href="http://fonts.googleapis.com/css.3e3e5.delayed?family=Montserrat:400,700" rel="stylesheet">
+    <!-- Poppins Font -->
+    <link href="http://fonts.googleapis.com/css.4bf26.delayed?family=Poppins" rel="stylesheet">
+    <!-- Style Css -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all">
+    <!-- smartmenus Css -->
+    <link href="{% static 'css/jquery.smartmenus.bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+    <!--owl-carousel-->
+    <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet" type="text/css" media="all">
+    <link href="{% static 'css/owl.transitions.css' %}" rel="stylesheet" type="text/css" media="all">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet"><!--font-awesome-->
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet" type="text/css" media="all">
+    <link href="{% static 'css/proxima-nova.css' %}" rel="stylesheet" type="text/css" media="all">
+    <!--animate-->
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet" type="text/css" media="all">
+    <!--magnific-popup-->
+    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet" type="text/css" media="all">
+    <!--progressbar-->
+    <link href="{% static 'css/bootstrap-progressbar.css' %}" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Style Palette -->
+    <link href="{% static 'css/style-palette/style-palette.css' %}" rel="stylesheet" type="text/css" media="all">
+    <!--favicon-->
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png" sizes="16x16">
+</head>
+<body>
+<!--wrapper-->
+<div class="wrapper">
+    <!--header-->
+    <header class="ta-trhead">
+        <div class="clearfix"></div>
+
+        <div class="">
+            <div id="mySidenav" class="sidenav">
+                <a href="#service" onclick="forceCloseNav()">Services</a>
+                <a href="#initiatives" onclick="forceCloseNav()">Initiatives</a>
+                <a href="#" onclick="forceCloseNav()">Portfolio</a>
+            </div>
+        </div>
+
+        <div class="row" style="background:  #ffffff">
+            <div class="col-md-12">
+                <button id="hamburger-button" style="margin: 0px;" onclick="toggleNav()" class="hamburger hamburger--collapse">
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </button>
+                <a class="navbar-brand" href="index.html" title="logo"><img
+                        src="http://www.lightcastlebd.com/images/logo.png" alt="Logo"></a>
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        function toggleNav() {
+            var $hamburger = $(".hamburger");
+            $hamburger.on("click", function (e) {
+                $hamburger.toggleClass("is-active");
+
+                if ($hamburger.hasClass("is-active")) {
+                    $("#mySidenav").css("width", "250px");
+                    $("#hamburger-button").css("marginLeft", "250px");
+                    $("#hamburger-button").css("background", "#e57736");
+//                    $(".hamburger-inner").css("background-color", "#fff");
+
+                } else {
+                    $("#mySidenav").css("width", "0px");
+                    $("#hamburger-button").css("marginLeft", "0px");
+                    $("#hamburger-button").css("background", "#fff");
+//                    $(".hamburger-inner").css("background-color", "#000");
+
+
+                }
+            });
+        }
+
+        /* Set the width of the side navigation to 0 */
+        function forceCloseNav() {
+            var $hamburger = $(".hamburger");
+            $hamburger.toggleClass("is-active");
+
+            $("#mySidenav").css("width", "0px");
+            $("#hamburger-button").css("marginLeft", "0px");
+            $("#hamburger-button").css("background", "#fff");
+        }
+
+
+    </script>
+    <!--/header-->
+    <!--== Home Slider ==-->
+    <section class="ta-slider-warraper">
+        <!--== ta-slider ==-->
+        <div id="ta-slider" class="owl-carousel">
+            {% for slider in main_sliders %}
+            <!--item-->
+            <div class="item">
+                <!--slide image-->
+                <figure><img src="{{ slider.image.url }}" alt="image description"></figure>
+                <!--/slide image-->
+                <!--slide inner-->
+                <div class="ta-slider-inner">
+                    <div class="container inner-table">
+                        <div class="inner-table-cell">
+                            <!--slide content area-->
+                            {% if slider.centered %}
+                            <div class="slide-caption slide-center">
+                                 <div>
+                                    <h1 class="carousel-first-slide-title">{{ slider.title }}</h1>
+                                    <div class="description">
+                                        <p class="carousel-first-slide-description">{{ slider.content }}</p>
+                                    </div>
+                                    <a class="btn btn-tislider" href="#">Read More</a></div>
+                                <!--/slide box style-->
+                            </div>
+                            {% else %}
+                            <div class="slide-caption slide-left">
+                                <div class="slide-inner-box carousel-slide-title-text">
+                                    <h1><span class="carousel-title-span">{{ slider.title }}</span></h1>
+                                    <div class="description carousel-slide-description-text">
+                                        <h1 class="carousel-description-span">{{ slider.content }}</h1>
+                                    </div>
+                                    <a class="btn btn-tislider" href="#">Read More</a></div>
+                                <!--/slide box style-->
+                            </div>
+                            {% endif %}
+
+                                <!--slide box style-->
+
+                            <!--/slide content area-->
+                        </div>
+                    </div>
+                </div>
+                <!--/slide inner-->
+            </div>
+            <!--/item-->
+            {% endfor %}
+
+            <!--&lt;!&ndash;USAID&ndash;&gt;-->
+
+            <!--&lt;!&ndash;A2I&ndash;&gt;-->
+            <!--<div class="item">-->
+                <!--&lt;!&ndash;slide image&ndash;&gt;-->
+                <!--<figure><img src="images/c.jpg' %}" alt="image description"></figure>-->
+                <!--&lt;!&ndash;/slide image&ndash;&gt;-->
+                <!--&lt;!&ndash;slide inner&ndash;&gt;-->
+                <!--<div class="ta-slider-inner">-->
+                    <!--<div class="container inner-table">-->
+                        <!--<div class="inner-table-cell">-->
+                            <!--&lt;!&ndash;slide content area&ndash;&gt;-->
+                            <!--<div class="slide-caption slide-left">-->
+                                <!--&lt;!&ndash;slide box style&ndash;&gt;-->
+                                <!--<div class="slide-inner-box carousel-slide-title-text">-->
+                                    <!--<h1><span class="carousel-title-span">DEMOCRATIZING DATA</span></h1>-->
+                                    <!--<div class="description carousel-slide-description-text">-->
+                                        <!--<h1 class="carousel-description-span">Building Bangladesh's First Open Data-->
+                                            <!--Platform(A2i)</h1>-->
+                                    <!--</div>-->
+                                    <!--<a class="btn btn-tislider" href="#">Read More</a></div>-->
+                                <!--&lt;!&ndash;/slide box style&ndash;&gt;-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash;/slide content area&ndash;&gt;-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;/slide inner&ndash;&gt;-->
+            <!--</div>-->
+            <!--&lt;!&ndash;/item&ndash;&gt;-->
+
+
+            <!--&lt;!&ndash;A2I&ndash;&gt;-->
+            <!--<div class="item">-->
+                <!--&lt;!&ndash;slide image&ndash;&gt;-->
+                <!--<figure><img src="images/a.jpg' %}" alt="image description"></figure>-->
+                <!--&lt;!&ndash;/slide image&ndash;&gt;-->
+                <!--&lt;!&ndash;slide inner&ndash;&gt;-->
+                <!--<div class="ta-slider-inner">-->
+                    <!--<div class="container inner-table">-->
+                        <!--<div class="inner-table-cell">-->
+                            <!--&lt;!&ndash;slide content area&ndash;&gt;-->
+                            <!--<div class="slide-caption slide-left">-->
+                                <!--&lt;!&ndash;slide box style&ndash;&gt;-->
+                                <!--<div class="slide-inner-box carousel-slide-title-text">-->
+                                    <!--<h1><span class="carousel-title-span">TURNING A NEW LEAF</span></h1>-->
+                                    <!--<div class="description carousel-slide-description-text">-->
+                                        <!--<h1 class="carousel-description-span">Delivering Safe Water Technology Solutions-->
+                                            <!--for Underserved Families in Remote Areas (GIZ)</h1>-->
+                                    <!--</div>-->
+                                    <!--<a class="btn btn-tislider" href="#">Read More</a></div>-->
+                                <!--&lt;!&ndash;/slide box style&ndash;&gt;-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash;/slide content area&ndash;&gt;-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;/slide inner&ndash;&gt;-->
+            <!--</div>-->
+            <!--&lt;!&ndash;/item&ndash;&gt;-->
+
+        </div>
+        <!--/ta-slider-->
+    </section>
+    <!--==/ Home Slider ==-->
+    <div class="clearfix"></div>
+    <!--==================== SERVICE SECTION ====================-->
+    <section id="services" class="ta-section">
+        <div class="container">
+
+            <div class="row padding-bottom-80 text-center">
+                <div class="col-md-12 padding-top-40 col-sm-12  fadeInDown animated text-center">
+                    <h5 class="company-message">At <span>LightCastle</span>, we combine data, analytics and technology
+                        to solve real world
+                        problems. Having data access of 30+ industries, our expertise lies in developing innovative
+                        social enterprise models, consulting for enterprises, and building world-class data platforms.
+                    </h5>
+                    <p><span><a class="btn btn-tislider" href="#">Learn More</a></span></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <!--col-md-4-->
+                <div class="col-md-12 col-sm-12 wow fadeInDown left_side">
+                    <h3 class="ta-heading-inner">
+                        <span>Services</span>
+                    </h3>
+                </div>
+                <!--/col-md-4-->
+            </div>
+            <div class="row">
+                <div id="service" class="owl-carousel owl-theme">
+                    {% for slider in services_sliders %}
+                    <div class="item">
+                        <!--col-md-12-->
+                        <div class="col-md-12">
+                            <!--portfolio-->
+                            <div class="ta-portfolio-box zoomIn animated">
+                                <figure><a href="#"> <img alt="portfolio1" class="img-responsive"
+                                                          src="{{slider.image.url}}"> </a>
+                                    <div class="overlay">
+                                        <div class="overlay-description text-center margin-top-20 padding-20">
+                                        </div>
+
+                                    </div>
+
+                                </figure>
+                                <!--<h4><a href="#">Project One</a></h4>-->
+                                <h3 class="services-card-title-area">Sustainability & Impact Advisory</h3>
+                                <p class="ta-portfolio-category services-card-description-area"> Evaluate project goals
+                                    & effectiveness and/or improve
+                                    business models to serve greater and lasting </p>
+                            </div>
+                            <!--/portfolio-->
+                        </div>
+                        <!--col-md-12-->
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--==================== ta-PORTFOLIO SECTION ====================-->
+    <section id="ta-portfolio" class="ta-section grey-bg no-padding ">
+        <div class="container">
+            <div class="row">
+                <!--col-md-4-->
+                <div class="col-md-12 col-sm-12 wow fadeInDown left_side">
+                    <h3 class="ta-heading-inner"><span>Case Studies</span></h3>
+                </div>
+                <!--/col-md-4-->
+
+            </div>
+            <!--container-->
+                <!--row-->
+            <div class="row">
+                    <!--portfolio-->
+                    <div id="portfolio" class="owl-carousel owl-theme">
+                        <!--item-->
+                        <div class="item">
+                            <!--col-md-12-->
+                            <div class="col-md-12">
+                                <!--portfolio-->
+                                <div class="ta-portfolio-box zoomIn animated">
+                                    <figure><a href="#"> <img alt="portfolio1" class="img-responsive"
+                                                              src="images/portfolio1.jpg' %}"> </a>
+                                        <div class="overlay">
+                                            <div class="overlay-description text-center margin-top-20 padding-20">
+                                                <p>This is sample description of the portfolio. This is sample description of the portfolio. This is sample description of the portfolio. This is sample description of the portfolio. This is sample description of the portfolio. This is sample description of the portfolio.</p>
+                                                <a href="#" ><u>Learn more</u></a>
+                                            </div>
+
+                                        </div>
+                                    </figure>
+                                    <h3 class="services-card-title-area">Business Analytics</h3>
+                                    <div class="ta-portfolio-category">
+                                        <p class="services-card-description-area">Organize data relevant to you and
+                                            experience powerful visualizations to stay on
+                                            top of your game. Organize data relevant to you and
+                                            experience powerful visualizations to stay on
+                                            top of your game</p>
+                                    </div>
+                                </div>
+                                <!--/portfolio-->
+                            </div>
+                            <!--col-md-12-->
+                        </div>
+                        <!--/item-->
+                        <!--item-->
+                        <div class="item">
+                            <!--col-md-12-->
+                            <div class="col-md-12">
+                                <!--portfolio-->
+                                <div class="ta-portfolio-box zoomIn animated">
+                                    <figure><a href="#"> <img alt="portfolio1" class="img-responsive"
+                                                              src="images/portfolio2.jpg' %}"> </a>
+                                        <div class="overlay">
+                                            <div class="overlay-description text-center margin-top-20 padding-20">
+                                                <p>This is sample description of the portfolio. This is sample description of the portfolio. This is sample description of the portfolio.</p>
+                                                <a href="#" ><u>Learn more</u></a>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                    <h3 class="services-card-title-area">Business Analytics</h3>
+                                    <div class="ta-portfolio-category">
+                                        <p class="services-card-description-area">Organize data relevant to you and
+                                            experience powerful visualizations to stay on
+                                            top of your game. Organize data relevant to you and
+                                            experience powerful visualizations to stay on
+                                            top of your game</p>
+                                    </div>
+                                </div>
+                                <!--/portfolio-->
+                            </div>
+                            <!--col-md-12-->
+                        </div>
+                        <!--/item-->
+                        <!--item-->
+                        <div class="item">
+                            <!--col-md-12-->
+                            <div class="col-md-12">
+                                <!--portfolio-->
+                                <div class="ta-portfolio-box zoomIn animated">
+                                    <figure><a href="#"> <img alt="portfolio1" class="img-responsive"
+                                                              src="images/portfolio3.jpg' %}"> </a>
+                                        <div class="overlay">
+                                            <div class="overlay-description text-center margin-top-20 padding-20">
+                                                <p>This is sample description of the portfolio. This is sample description of the portfolio. This is sample description of the portfolio.</p>
+                                                <a href="#" ><u>Learn more</u></a>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                    <h3 class="services-card-title-area">Business Analytics</h3>
+                                    <div class="ta-portfolio-category">
+                                        <p class="services-card-description-area">Organize data relevant to you and
+                                            experience powerful visualizations to stay on
+                                            top of your game</p>
+                                    </div>
+                                </div>
+                                <!--/portfolio-->
+                            </div>
+                            <!--col-md-12-->
+                        </div>
+                        <!--/item-->
+                        <!--item-->
+                        <!--/item-->
+                    </div>
+                    <!--/portfolio-->
+                </div>
+                <!--/row-->
+            <!--/container-->
+            <div class="text-center"><a class="btn btn-tislider">View All</a></div>
+
+        </div>
+    </section>
+
+
+    <section id="initiative" class="ta-section grey-bg no-padding ">
+        <div class="container">
+            <div class="row">
+                <!--col-md-4-->
+                <div class="col-md-12 col-sm-12 wow fadeInDown left_side">
+                    <h3 class="ta-heading-inner"><span>Initiatives</span></h3>
+                </div>
+                <!--/col-md-4-->
+
+            </div>
+            <!--container-->
+                <!--row-->
+            <div class="row">
+                    <!--portfolio-->
+                    <div id="initiative-carousel" class="owl-carousel owl-theme">
+                        <!--item-->
+                        <div class="item">
+                            <!--col-md-12-->
+                            <div class="col-md-12">
+                                <!--portfolio-->
+                                <div class="ta-portfolio-box zoomIn animated">
+                                    <figure><a href="#"> <img alt="portfolio1" class="img-responsive"
+                                                              src="images/portfolio1.jpg' %}"> </a>
+                                        <div class="overlay">
+                                            <div class="overlay-description text-center  padding-20" style="margin-top: 40px">
+                                                <a class="btn btn-tislider">VIEW WEBSITE</a>                                            </div>
+
+                                        </div>
+                                    </figure>
+                                    <h3 class="services-card-title-area">Business Analytics</h3>
+                                    <div class="ta-portfolio-category">
+                                        <p class="services-card-description-area">Organize data relevant to you and
+                                            experience powerful visualizations to stay on
+                                            top of your game. Organize data relevant to you and
+                                            experience powerful visualizations to stay on
+                                            top of your game</p>
+                                    </div>
+                                </div>
+                                <!--/portfolio-->
+                            </div>
+                            <!--col-md-12-->
+                        </div>
+                        <!--/item-->
+                        <!--item-->
+                        <!--/item-->
+                        <!--item-->
+                        <div class="item">
+                            <!--col-md-12-->
+                            <div class="col-md-12">
+                                <!--portfolio-->
+                                <div class="ta-portfolio-box zoomIn animated">
+                                    <figure><a href="#"> <img alt="portfolio1" class="img-responsive"
+                                                              src="images/portfolio3.jpg' %}"> </a>
+                                        <div class="overlay">
+                                            <div class="overlay-description text-center  padding-20" style="margin-top: 40px">
+                                                <a class="btn btn-tislider">VIEW WEBSITE</a>                                            </div>
+
+                                        </div>
+                                    </figure>
+                                    <h3 class="services-card-title-area">Business Analytics</h3>
+                                    <div class="ta-portfolio-category">
+                                        <p class="services-card-description-area">Organize data relevant to you and
+                                            experience powerful visualizations to stay on
+                                            top of your game</p>
+                                    </div>
+                                </div>
+                                <!--/portfolio-->
+                            </div>
+                            <!--col-md-12-->
+                        </div>
+                        <!--/item-->
+                        <!--item-->
+                        <div class="item">
+                            <!--col-md-12-->
+                            <div class="col-md-12">
+                                <!--portfolio-->
+                                <div class="ta-portfolio-box zoomIn animated">
+                                    <figure><a href="#"> <img alt="portfolio1" class="img-responsive"
+                                                              src="images/portfolio4.jpg' %}"> </a>
+                                        <div class="overlay">
+                                            <div class="overlay-description text-center  padding-20" style="margin-top: 40px">
+                                                <a class="btn btn-tislider">VIEW WEBSITE</a>                                            </div>
+
+                                        </div>
+                                    </figure>
+                                    <h3 class="services-card-title-area">Business Analytics</h3>
+                                    <div class="ta-portfolio-category">
+                                        <p class="services-card-description-area">Organize data relevant to you and
+                                            experience powerful visualizations to stay on
+                                            top of your game</p>
+                                    </div>
+                                </div>
+                                <!--/portfolio-->
+                            </div>
+                            <!--col-md-12-->
+                        </div>
+                        <!--/item-->
+                    </div>
+                    <!--/portfolio-->
+                </div>
+                <!--/row-->
+            <!--/container-->
+            <div class="text-center"><a class="btn btn-tislider">View All</a></div>
+
+        </div>
+    </section>
+
+    <section class="ta-clients-section grey-bg">
+        <div class="overlay">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 wow fadeInDown left_side">
+                <div class="ta-heading text-left">
+                  <h3 class="ta-heading-inner">Our <span>Partners</span></h3>
+                </div>
+              </div>
+              <div class="col-md-12 col-sm-12 wow zoomIn animated text-center margin-top-50">
+                <div id="ta-client-slider">
+                  <div class="item"> <a href="#"><img class="img-responsive" src="{% static 'images/client/telenor.jpg' %}" alt="brand1"/></a> </div>
+                  <div class="item"> <a href="#"><img class="img-responsive" src="images/client/robi.png" alt="brand2"/></a> </div>
+                  <div class="item"> <a href="#"><img class="img-responsive" src="images/client/labaid.jpg" alt="brand3"/></a> </div>
+                  <div class="item"> <a href="#"><img class="img-responsive" src="images/client/bcg.jpg" alt="brand4"/></a> </div>
+                  <div class="item"> <a href="#"><img class="img-responsive" src="images/client/jaago.jpg" alt="brand5"/></a> </div>
+                  <div class="item"> <a href="#"><img class="img-responsive" src="images/client/labaid.jpg" alt="brand3"/></a> </div>
+                  <div class="item"> <a href="#"><img class="img-responsive" src="images/client/bcg.jpg" alt="brand4"/></a> </div>
+                  <div class="item"> <a href="#"><img class="img-responsive" src="images/client/jaago.jpg" alt="brand5"/></a> </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center" style="margin-top: -30px"><a class="btn btn-tislider">View All</a></div>
+
+          </div>
+        </div>
+    </section>
+
+    <!--==================== TESTIMONIALS SECTION ====================-->
+    <section class="testimonials-section">
+        <!--overlay-->
+        <div class="">
+            <!--container-->
+            <div class="container">
+                <!--row-->
+                <div class="row">
+                    <!--col-md-4-->
+                    <div class="col-md-12 col-sm-12 wow fadeInDown left_side">
+                        <h3 class="ta-heading-inner text-left"><span>Words of Encouragement</span></h3>
+                    </div>
+                    <!--/col-md-4-->
+                </div>
+                <!--/row-->
+                <!--content-testimonials-->
+                <div class="content-testimonials">
+                    <!--testimonial-->
+                    <div id="ta-testimonial" class="owl-carousel owl-theme">
+                        <!--item-->
+                        <div class="item">
+                            <div class="testimonials_qute bounceInUp animated"><span class="sub-qute">Vestibulum quis porttitor dui! viverra nunc mi, Aliquam condimentum mattis neque sed pretium Aliquam condimentum mattis neque sed pretiumAliquam condimentum mattis neque sed pretium</span>
+                                <span class="ta-client"><img src="images/client-thumb1.jpg" alt="client"/></span>
+                                <div class="ta-client-qute">
+                                    <p class="user-title">Williams Moore</p>
+                                    <p class="user-designation">Creative Designer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/item-->
+                        <!--item-->
+                        <div class="item">
+                            <div class="testimonials_qute bounceInUp animated"><span class="sub-qute">Vestibulum quis porttitor dui! viverra nunc mi, Aliquam condimentum mattis neque sed pretium Aliquam condimentum mattis neque sed pretiumAliquam condimentum mattis neque sed pretium</span>
+                                <span class="ta-client"><img src="images/client-thumb2.jpg" alt="client"/></span>
+                                <div class="ta-client-qute">
+                                    <p class="user-title">Ronald Thompson</p>
+                                    <p class="user-designation">Company Inc</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/item-->
+                        <!--item-->
+                        <div class="item">
+                            <div class="testimonials_qute bounceInUp animated"><span class="sub-qute">Vestibulum quis porttitor dui! viverra nunc mi, Aliquam condimentum mattis neque sed pretium Aliquam condimentum mattis neque sed pretiumAliquam condimentum mattis neque sed pretium</span>
+                                <span class="ta-client"><img src="images/client-thumb3.jpg" alt="client"/></span>
+                                <div class="ta-client-qute">
+                                    <p class="user-title">Laura Walker</p>
+                                    <p class="user-designation">Co-Founder</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/item-->
+                    </div>
+                    <!--/testimonial-->
+                </div>
+                <!--/content-testimonials-->
+            </div>
+            <!--/container-->
+        </div>
+        <!--/overlay-->
+    </section>
+
+    <!--====================MAP AREA ====================-->
+    <section class="ta-req" id="req">
+        <div class="overlay">
+            <div class="pre-img-right hidden-xs"></div>
+            <!--/img-right-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 text-left">
+                        <h5>Request a Call Back</h5>
+                        <p class="padding-bottom-30">Get in touch with us and let us assist you in making your work
+                            easier!</p>
+                        <form class="margin-bottom-20 foot" action="#">
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group footer-input">
+                                            <input type="text" required class="form-control" name="Name" id="Name">
+                                            <label>Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" required class="form-control" name="Email" id="Email">
+                                            <label>Email</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" required class="form-control" name="Tel" id="Tel">
+                                            <label>Phone No.</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" required class="form-control" name="Subject"
+                                                   id="Subject">
+                                            <label>Subject</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <!-- Textarea -->
+                                        <div class="form-group footer-input">
+                                            <textarea rows="6" class="form-control" style="color: #eee;"></textarea>
+                                            <label>Message</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="control-group">
+                                            <div class="controls">
+                                                <button class="btn btn-tislider" name="Submit">Send Message</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.29343031278!2d90.40464161498176!3d23.772563184578424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8c7fe6bf88d%3A0x7ffb1e8b4bb64360!2sLightCastle+Partners!5e0!3m2!1sen!2sbd!4v1479979099991"
+                                width="600" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--==================== overend
+         AREA ====================-->
+    </section>
+
+    <!--==================== FOOTER AREA ====================-->
+    <footer>
+        <div class="overlay">
+            <!--Start ta-footer-widget-area-->
+            <div class="ta-footer-widget-area">
+                <div class="container">
+                    <div class="row">
+                        <!--col-md-3-->
+                        <div class="col-md-6 col-sm-6 rotateInDownLeft animated">
+                            <div class="ta-widget">
+                                <h6>Address</h6>
+                                <ul class="ta-widget-address address-widget">
+                                    <li><span class="icon-addr"><i class="fa fa-map-marker"> </i></span><strong>Address:</strong> House
+                                        19, Road 13, Niketan, Dhaka, Bangladesh
+                                    </li>
+                                    <li><span class="icon-addr"><i
+                                            class="fa fa-envelope"> </i></span><strong>Email:</strong> info@lightcastlebd.com
+                                    </li>
+                                    <li><span class="icon-addr"><i
+                                            class="fa fa-phone"> </i></span><strong>Phone:</strong> + (007) 548 58 5400
+                                    </li>
+                                    <li><span class="icon-addr"><i
+                                            class="fa fa-globe"> </i></span><strong>Website:</strong>
+                                        www.lightcastlebd.com
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--/col-md-3-->
+                        <!--col-md-3-->
+                        <div class="col-md-6 col-sm-6 rotateInDownLeft animated">
+                            <div class="ta-widget">
+                                <h6>Newsletter Subscription</h6>
+                                <!-- SUBSCRIPTION SUCCESSFUL OR ERROR MESSAGES -->
+                                <p class="subscription-success"></p>
+                                <p class="subscription-error"></p>
+                                <!-- MAILCHIMP SUBSCRIBE FORM -->
+                                <form class="subscription-form mailchimp" novalidate>
+                                    <!-- EMAIL INPUT BOX -->
+                                    <div class="form-group footer-input">
+                                        <div class="form-group">
+                                        <input type="text" required class="form-control" name="Subject"
+                                               id="subscribe_email">
+                                        <label style="color: #eeeeee;">Email</label>
+                                    </div>
+                                    </div>
+                                    <!-- SUBSCRIBE BUTTON -->
+                                    <button class="btn btn-tislider" id="subscribe-button" type="submit">Subscribe Now!
+                                    </button>
+                                </form>
+                                <br>
+                                <!-- /END SUBSCRIPTION FORM -->
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <ul class="ta-social">
+                                            <li><span class="icon-soci"><a href="#"><i
+                                                    class="fa fa-facebook"></i></a></span></li>
+                                            <li><span class="icon-soci"><a href="#"><i
+                                                    class="fa fa-twitter"></i></a></span></li>
+                                            <li><span class="icon-soci"><a href="#"><i
+                                                    class="fa fa-linkedin"></i></a></span></li>
+                                            <li><span class="icon-soci"><a href="#"><i
+                                                    class="fa fa-pinterest-p"></i></a></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--/col-md-3-->
+
+
+            </div>
+            <!--/row-->
+        </div>
+
+    </footer>
+    <!--/footer-->
+</div>
+<!--/wrapper-->
+<!--Scroll To Top-->
+<a href="#" class="ta_scroll bounceInup animated  slider-arrow-large">
+    <i class="fa fa-long-arrow-up"></i>
+</a>
+<!--/Scroll To Top-->
+
+<!-- ==================== JAVASCRIPT ====================-->
+<!-- jQuery -->
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+<!-- style pallete -->
+<script type="text/javascript" src="{% static 'js/style-palette/jsstorage.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/style-palette/style-palette.js' %}"></script>
+<!-- Bootstrap -->
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+<!-- smartmenus -->
+<script type="text/javascript" src="{% static 'js/jquery.smartmenus.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.smartmenus.bootstrap.js' %}"></script>
+<!-- sticky header -->
+<script type="text/javascript" src="{% static 'js/jquery.sticky.js' %}"></script>
+<!-- owl-carousel  -->
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+<!-- progress-bar  -->
+<script type="text/javascript" src="{% static 'js/bootstrap-progressbar.js' %}"></script>
+<!-- magnific-popup -->
+<script type="text/javascript" src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+<!-- waypoints -->
+<script type="text/javascript" src="{% static 'js/waypoints.js' %}"></script>
+<!-- counter-up -->
+<script type="text/javascript" src="{% static 'js/jquery.counterup.js' %}"></script>
+<!-- mail-chimp -->
+<script type="text/javascript" src="{% static 'js/jquery.ajaxchimp.js' %}"></script>
+<!-- custom -->
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+
+
+</body>
+
+</html>

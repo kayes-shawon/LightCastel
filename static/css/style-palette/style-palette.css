@@ -1,0 +1,172 @@
+﻿/*
+* Created by: themeansar
+* Copyright (c) 2016 themeansar
+* http://www.themeansar.com
+* Name: style-palette.css
+*/
+
+#style-palette h3 {  
+	color: #818181;
+	font-size: 15px;
+	letter-spacing: 1px;
+	margin: 5px 0 10px 1px;
+	padding: 0;
+	border: 0px;
+}
+#style-palette {
+	background-color: #000;
+	width: 205px;
+	position:fixed;
+	top: 80px;
+	z-index: 1000;
+	border-radius: 0 0 3px 0;
+	left: -206px;
+	border: 1px solid #000;
+	border-left: 0;
+	border-top: 0;
+	box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.08);
+}
+
+#style-palette div { padding: 3px 10px 0 18px; margin: 0px; overflow: hidden;  }
+#style-palette h2 {
+	background-color: #000;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+	padding: 0 0 0 20px;
+	margin:0;
+	line-height:40px;
+}
+#style-palette h2 a {
+	background-color: #000;
+	display: block;
+	height: 40px;
+	position: absolute;
+	right: -43px;
+	font-size:22px;
+	text-align:center;
+	color:#fff;
+	width: 43px;
+	text-decoration:none;
+	border-radius: 0 30px 30px 0;
+}	
+#style-palette h2 a:focus { outline: none; }
+.colors1 { list-style: none outside none; margin: 0 0 10px; border-bottom: 1px solid #d2d2d2; overflow: hidden; padding: 0 0 20px; }
+.colors1 li { float:left; margin: 0px 2px 0; }
+.colors1 li a { 
+	border-radius: 1px; 
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    font-size: 13px;
+    height: 30px;
+    padding: 5px;
+    text-align: center;
+    width: 80px;
+} 
+
+.ta-colors-palette  { list-style: none outside none; margin: 0; overflow: hidden; padding: 0 0 20px; }
+.ta-colors-palette :last-child { border-bottom: 0 none; padding: 0 0 10px; }
+.ta-colors-palette  li { float:left; margin: 4px 2px 0 2px; }
+.ta-colors-palette  li a { display: block; width: 29px; height: 29px; cursor: pointer; border-radius: 3px; } 
+.layout-style select, .header-style select, 
+.footer-style select, .header-color input {
+	width: 164px;
+	padding: 7px 5px;
+	color: #363636;
+	cursor: pointer;
+	border-radius: 0px;
+	height: 35px;
+	font-size: 14px;
+	margin: 2px 0 2px 2px;
+	border: 1px solid #ccc;
+	
+}
+.header-color .sp-replacer  { padding:4px 6px !important; }
+.header-color .sp-replacer .sp-dd, 
+.header-color .sp-replacer .sp-preview, 
+div.header-color { padding:0px 1px !important; }
+.layout-style, .header-style, .header-color
+.footer-style { padding: 0 !important; }
+
+.st-btn {
+	background-color: #232c3b;
+    box-shadow: 0 2px 0 0 #161c28;
+    color: #ffffff;
+    border-radius: 2px;
+	border: 0px none;
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    line-height: 20px;
+    margin: 0 0 8px;
+    padding: 6px 0px !important;
+    width: 80px !important;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    vertical-align: middle;
+}
+.st-btn:hover,.st-btn:focus { 
+	color: #fff;
+}
+.default { background: #f26200; }
+.amber { background: #ffc107; }
+.blue { background: #2196f3; }
+.deep-purple {background: #673ab7; }
+.green { background: #4caf50; }
+.indigo {background: #3f51b5; }
+.pink {background: #e91e63; }
+.purple {background: #9c27b0; }
+.red {background: #d32f2f; }
+.teal {background: #009688; }
+
+
+
+.bg1 { background-image: url("../../images/bg-pattern/bg-img1.png"); }
+.bg2 { background-image: url("../../images/bg-pattern/bg-img2.png"); }
+.bg3 { background-image: url("../../images/bg-pattern/bg-img3.png"); }
+.bg4 { background-image: url("../../images/bg-pattern/bg-img4.png"); }
+.bg5 { background-image: url("../../images/bg-pattern/bg-img5.png"); }
+.bg6 { background-image: url("../../images/bg-pattern/bg-img6.jpg"); }
+.bg7 { background-image: url("../../images/bg-pattern/bg-img7.jpg"); }
+.bg8 { background-image: url("../../images/bg-pattern/bg-img8.jpg"); }
+.bg9 { background-image: url("../../images/bg-pattern/bg-img9.jpg"); }
+.bg10 { background-image: url("../../images/bg-pattern/bg-img10.jpg"); }
+	
+@media only screen and (max-width: 1023px) { #style-palette { display: none; } }
+
+/* This media query for layout resize with boxed layout */
+
+@media(min-width: 1200px) {
+
+body.boxed {
+    width: 1170px;
+    -webkit-box-shadow: 0 0 10px 0 rgba(48, 48, 48, 0.5);
+    box-shadow: 0 0 10px 0 rgba(48, 48, 48, 0.5);
+    margin: 0 auto;
+	position: relative;
+	background: url(../../images/bg-pattern/bg-img1.png) repeat fixed;
+}
+
+}
+
+@media (min-width: 768px) and (max-width: 979px)  {
+
+body.boxed { width: 100%; }
+
+}
+
+@media (max-width: 767px) {
+
+body.boxed { width: 100%; /* padding: 0px 20px !important; */ }
+body { padding-left: 0px !important; padding-right: 0px !important; }
+	
+}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+
+body.boxed { width: 100%; }
+	
+}   

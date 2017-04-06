@@ -1,0 +1,396 @@
+<!--
+    
+    Project Name            :   LightCastel Rebuild;
+    Project Description     :   Light Castel Ltd Brand Web version Rebuild;
+    Author Name             :   Tareq Al Muntasir and Saifur Rahman (Hasan);
+    Author Email            :   muntasir2000@gmail.com, saifur.dohs@gmail.com;  
+
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        {% load static %}
+
+        <!--favicon-->
+        <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
+
+        <!-- Page Title -->
+        <title>LightCastle Partners</title>
+
+        <!--SEO Meta Tags-->
+        <meta content='Description Your Blog Here' name='description'/>
+        <meta content='Keywords Your Blog Here' name='keywords'/>
+        <meta content='index, follow' name='robots'/>
+        <!--/SEO Meta Tags-->
+        
+        <!-- Global CSS [ Bootstrap, Font-Awesome, Animate CSS, Owl Carousel ] -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Raleway|Roboto|Roboto+Slab|Titillium+Web|Ubuntu" rel="stylesheet">
+
+
+        <!-- APP CSS -->
+        <link rel="stylesheet" href="{% static 'light_castel/css/app.min.css' %}">
+
+        <!-- APP Window Preloader Script -->
+        <!-- <script type="text/javascript">
+            window.addEventListener('load', function(){
+                var _lc_theme_preloader     =   document.getElementById('_lc_theme_preloader'); 
+                document.body.removeChild(_lc_theme_preloader);
+            });
+        </script> -->
+        <!-- End APP Window Preloader Script -->
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+        <!-- ==================== OLD CSS FILES ====================-->
+        
+        <!-- ******* Old Files -->
+        <link href="{% static 'css/colors/default.css' %}" rel="stylesheet" type="text/css" media="all">
+
+        <!-- Style Css -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all">
+
+        <!-- smartmenus Css -->
+        <link href="{% static 'css/jquery.smartmenus.bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+        
+        <!--owl-carousel-->
+        <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet" type="text/css" media="all">
+        <link href="{% static 'css/owl.transitions.css' %}" rel="stylesheet" type="text/css" media="all">
+        
+        
+        <!--magnific-popup-->
+        <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet" type="text/css" media="all">
+        
+        <!--progressbar-->
+        <link href="{% static 'css/bootstrap-progressbar.css' %}" rel="stylesheet" type="text/css" media="all">
+
+        <!-- Style Palette -->
+        <link href="{% static 'css/style-palette/style-palette.css' %}" rel="stylesheet" type="text/css" media="all">
+        
+        
+        <!-- Form Validation CSS -->
+        <link rel="stylesheet" href="{% static 'formValidation/css/formValidation.min.css' %}">
+
+        <!-- Theme CSS -->
+        <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+    
+        
+
+    </head>
+    <body>
+    
+        <!-- Window Preloader -->
+        <div id="_lc_theme_preloader">
+            <div class="center-vh">
+                <div class="container text-center">
+                    <div class="spinner">
+                        <div class="bounce1"></div> <div class="bounce2"></div> <div class="bounce3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Window Preloader -->
+
+
+        <!-- Fixed Side Nav Menu & Trigger -->
+        <nav class="nav-side">
+        
+            <!-- Nav Side Trigger -->
+            <a href="#" class="nav-toggle">
+                <i class="fa fa-2x fa-bars icon"></i>
+            </a>
+            <!-- End Nav Side Trigger -->
+
+            <!-- Nav Side Links -->
+            <ul class="list-unstyled side-nav-lists">
+                <li><a href="./#Services" data-toggle="GoTo">Services</a></li>
+                <li><a href="./#Casestudies" data-toggle="GoTo">Case Studies</a></li> <!-- Backend -->
+                <li><a href="./#Initiatives" data-toggle="GoTo">Initatives</a></li>
+                <li><a href="./#Clients" data-toggle="GoTo">Clients</a></li>
+                <li><a href="/in-the-media">Media</a></li> <!-- Backend -->
+                <li><a href="http://www.lightcastlebd.com/blog/" target="_blank">Blog</a></li>
+                <li><a href="/about" >About</a></li> <!-- Backend -->
+                <li><a href="./#Contact" data-toggle="GoTo">Contact Us</a></li>
+            </ul>
+            <!-- End Nav Side Links -->
+
+        </nav>
+        <!-- End Fixed Side Nav Menu & Trigger -->
+
+        
+        
+
+
+        <!-- Old Code  *************************************************************************************************************** -->
+
+
+        <!--wrapper-->
+        <div class="wrapper">
+            
+            <!--Header-->
+            <nav class="navbar navbar-default theme-header" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">
+                            <img src="{% static 'images/brand-logo.png' %}" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Header -->
+            
+            <!-- Page Content -->
+            {% block content %}
+
+            {% endblock content %}
+            <!-- End Page Content -->
+            
+
+            <!-- Footer -->
+            <footer class="footer">
+
+                <!-- Footer Top -->
+                <div class="container">
+                    <div class="row" style="margin-bottom: 20px;">
+                        
+                        <!-- Section -> Contact Us -->
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <section id="Contact">
+                                <h5 class="headline">Request a Call Back</h5>
+                                <p class="headline-dtls">Get in touch with us and let us assist you in making your work easier!</p>
+                                
+                                <!-- Contact Form -->
+                                <form action="/request-callback" method="post" autocomplete="off" id="ContactForm">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" name="name" placeholder="Name" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="email" name="email" placeholder="Email" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="tel" name="phone" placeholder="Phone" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" name="subject" placeholder="Subject" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <textarea name="message" class="form-control" placeholder="Message" cols="30" rows="10"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-block btn-sm btn-footer">SEND MESSAGE</button>
+                                    </div>
+                                </form>
+                                <!-- End Contact Form -->
+
+                            </section>
+                        </div>
+                        <!-- End Section -> Contact Us -->
+                        
+                         <!-- Section -> Subscribe -->
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <section id="Subscribe">
+                                <h5 class="headline">Newsletter Subscribe</h5>
+                                <p class="headline-dtls">Subscribe us for getting latest news</p>
+                                
+                                <!-- Form -> Newsletter -->
+                                <form action="/subscribe" method="post" autocomplete="off" id="FormNewsletter">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <input type="email" name="email" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" class="btn btn-sm btn-footer" value="Subscribe">
+                                    </div>
+                                </form>
+                                <!-- End Form -> Newsletter -->
+
+                            </section>
+                        </div>
+                        <!-- End Section -> Subscribe -->
+
+                    </div>
+                </div>
+                <!-- End Footer Top -->
+
+                <!-- Footer Bottom -->
+                <div class="container">
+                    <div class="row">
+                        
+                        <!-- Section -> Google Map -->
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <section id="GoogleMapHolder">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.29343031278!2d90.40464161498176!3d23.772563184578424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8c7fe6bf88d%3A0x7ffb1e8b4bb64360!2sLightCastle+Partners!5e0!3m2!1sen!2sbd!4v1479979099991" frameborder="0" class="gmap" allowfullscreen></iframe>
+                            </section>
+                        </div>
+                        <!-- End Section -> Google Map -->
+
+                        <!-- Section -> Address -->
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <section id="Address">
+                                <h5 class="headline">Contact Us</h5>
+                            
+                                <!-- Address -->
+                                <ul class="list-unstyled address-list">
+                                    <li>
+                                        <i class="fa fa-lg fa-fw fa-map-marker icon"></i>
+                                        <strong>Address:</strong> 
+                                        House 19, Road 13, Niketan, Dhaka, Bangladesh
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-lg fa-fw fa-envelope icon"></i>
+                                        <strong>Email:</strong> 
+                                        info@lightcastlebd.com
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-lg fa-fw fa-phone icon"></i>
+                                        <strong>Phone:</strong> 
+                                        +880 1747 353438 | +880 1711 385988
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-lg fa-fw fa-globe icon"></i>
+                                        <strong>Website:</strong> 
+                                        www.lightcastlebd.com
+                                    </li>
+                                </ul>
+                                <!-- End Address -->
+                                          
+                                <!-- Social Links -->
+                                <ul class="list-inline social-icon-list">
+                                    <li>
+                                        <a href="https://www.facebook.com/LightCastleBD/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank">
+                                            <i class="fa fa-lg fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://twitter.com/LCPBD?lang=en" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank">
+                                            <i class="fa fa-lg fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/company-beta/3081695/" data-toggle="tooltip" data-placement="top" title="Linked In" target="_blank">
+                                            <i class="fa fa-lg fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com/channel/UCdhErrXJ89TKTfgn7NHn-Vw/videos" data-toggle="tooltip" data-placement="top" title="Youtube" target="_blank">
+                                            <i class="fa fa-lg fa-youtube-play"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- End Social Links -->
+
+                            </section>
+                        </div>
+                        <!-- End Section -> Address -->
+                        
+                    </div>
+                </div>
+                <!-- End Footer Bottom -->
+            </footer>
+            <!-- End Footer -->
+
+        </div>
+        <!--/wrapper-->
+    
+        <!--Scroll To Top-->
+        <a href="#" id="btn_back_to_top">
+            <img src="{% static 'images/top.png' %}" alt="Back to top img">
+        </a>
+        <!--/Scroll To Top-->
+        
+        <!-- Modal Message Responder -->
+        <div class="modal fade" id="modal-auto">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body"></div>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal Message Responder -->
+
+        <!-- Global JS [  jQuery, Bootstrap, Owl Carousel ] -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+
+
+
+        <!-- OLD ************************************************** -->
+
+
+        <!-- ==================== JAVASCRIPT ====================-->
+        <!-- Global JS [ jQuery, Bootstrap ] -->
+
+
+        <!-- style pallete -->
+        <!-- <script type="text/javascript" src="{% static 'js/style-palette/jsstorage.js' %}"></script> -->
+        <!-- <script type="text/javascript" src="{% static 'js/style-palette/style-palette.js' %}"></script> -->
+        
+
+        <!-- smartmenus -->
+        <!-- <script type="text/javascript" src="{% static 'js/jquery.smartmenus.js' %}"></script> -->
+        <!-- <script type="text/javascript" src="{% static 'js/jquery.smartmenus.bootstrap.js' %}"></script> -->
+        <!-- sticky header -->
+        <!-- <script type="text/javascript" src="{% static 'js/jquery.sticky.js' %}"></script> -->
+        <!-- owl-carousel  -->
+        <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <!-- progress-bar  -->
+        <!-- <script type="text/javascript" src="{% static 'js/bootstrap-progressbar.js' %}"></script> -->
+        <!-- magnific-popup -->
+        <!-- <script type="text/javascript" src="{% static 'js/jquery.magnific-popup.js' %}"></script> -->
+        <!-- waypoints -->
+        <!-- <script type="text/javascript" src="{% static 'js/waypoints.js' %}"></script> -->
+        <!-- counter-up -->
+        <!-- <script type="text/javascript" src="{% static 'js/jquery.counterup.js' %}"></script> -->
+        <!-- mail-chimp -->
+        <!-- <script type="text/javascript" src="{% static 'js/jquery.ajaxchimp.js' %}"></script> -->
+        <!-- custom -->
+        <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+       
+        <!-- Form Validation -->
+        <script type="text/javascript" src="{% static 'formValidation/js/formValidation.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'formValidation/js/freamwork/bootstrap.min.js' %}"></script>
+
+        <!-- Theme JS -->
+        <script type="text/javascript" src="{% static 'js/theme.js' %}"></script>
+
+    </body>
+
+</html>
