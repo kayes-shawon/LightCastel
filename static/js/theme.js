@@ -32,8 +32,8 @@ $('.member_talked').click(function(event) {
                         <img class="media-object" src="`+ Member.img +`" alt="Image">
                     </a>
                     
-                    <h4 class="margin-top-0">`+ Member.full_name +`</h4>
-                    <h6>`+ Member.designation +`</h5>
+                    <h4 class="margin-top-0 member-name">`+ Member.full_name +`</h4>
+                    <h6 class="member-name">`+ Member.designation +`</h5>
 
                     <p class="member-talked">`+ message +`</p>
                 </div>`;

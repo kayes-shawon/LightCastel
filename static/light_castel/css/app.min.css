@@ -83,7 +83,7 @@ body{ font-family: 'Roboto', sans-serif; }
 .lc_footer_top{ padding: 3em 0; background-color: #272C2F; }
 .lc_footer_top .ls_about_us{ padding-left: 4em !important; padding-right: 1.5em; }
 .lc_footer_top .ls_about_us .list-unstyled{ margin-top: 2em; }
-.lc_footer_top .ls_about_us .list-unstyled li{ margin-bottom: 1.5em; }
+.lc_footer_top .ls_about_us .list-unstyled li{ margin-bottom: 1em; }
 .lc_footer_top .lc_subscribe_form{ margin-top: 2.5em; }
 .lc_footer_top .lc_subscribe_form .form-group{ margin-bottom: 1.5em; }
 .lc_footer_top .lc_subscribe_form .form-control{ background-color: #B4B5B7; border-color: #B4B5B7; border-radius: 3px; color: #272C2F; padding: 1.5em; }
@@ -92,7 +92,7 @@ body{ font-family: 'Roboto', sans-serif; }
 .lc_footer_top .lc_subscribe_form .form-control:-ms-input-placeholder { color: #272C2F; }
 .lc_footer_top .lc_subscribe_form .form-control:-moz-placeholder { color: #272C2F; }
 .lc_footer_top .lc_subscribe_form .form-control:focus{ outline: 0 none; box-shadow: none; }
-.lc_footer_top .lc_subscribe_form .btn-borderd{ background-color: #2e3336; border: 2px solid #666a6d; letter-spacing: 2px; margin-top: 1em; }
+.lc_footer_top .lc_subscribe_form .btn-borderd{ background-color: #2e3336; border: 2px solid #666a6d; letter-spacing: 2px; margin-top: 17px; }
 .lc_footer_top .lc_subscribe_form .btn-borderd:hover{ color: #D0D2D2; }
 .lc_footer_bottom{ background-color: #2E3336; border-top: 1px solid #192226; }
 .lc_footer_bottom .navbar-nav li a{ color: #D0D2D2; }
@@ -130,31 +130,34 @@ body{ font-family: 'Roboto', sans-serif; }
 .section-activities .activity-details{ font-size: 1.9em; line-height: 1.754; }
 
 .section-contact-form{ background-color: #f8f8f8; }
-.section-contact-form .section-des{ color: #333; font-size: 1.3em; margin-bottom: 1.5em; }
+.section-contact-form .section-des{ color: #333; font-size: 1.15em; margin-bottom: 1.5em; }
 .section-contact-form .form-control{ background-color: #f3f3f3; border-color: #858585; border-radius: 3px; }
 
 /* page-about */
 .page-banner{ background-size: cover; padding: 7em 5em 4em 5em; box-sizing: border-box; }
-.page-banner-title{ font-weight: bold; font-size: 2.5em; color: white; text-align: center; }
+.page-banner-title{ font-weight: bold; font-size: 3em; color: white; text-align: center; font-family: 'Raleway', sans-serif; }
 .section-title{ color: #256794; border-bottom: 1px solid #c1c1c1; padding: 0 0 10px 0; margin: 0 0 1em 0; }
 .page-about .section-people .tab-content{ padding: 2em 0; }
 .page-about .section-people .tab-content .thumbnail-overlay .caption-up .icon{ width: 30px; height: 30px; border: 2px solid white; margin: 0 auto; line-height: 29px; border-radius: 50%; }
 
 
 /* Page Casestudies */
-.page-casestudies #__Blog__Article__Holder .article-banner-list{ margin-top: 1.5em; }
-.page-casestudies #__Blog__Article__Holder .article-banner-list li{ border-bottom: 1px solid #aa9999; padding: 1.3em 0; padding-left: 1.5em; font-size: 1.2em; color: black; }
+.page-casestudies #__Blog__Article__Holder .article-banner-list{ margin-top: 2em; }
+.page-casestudies #__Blog__Article__Holder .article-banner-list li{ border-bottom: 1px solid #aa9999; padding: 1.3em 0; padding-left: 1.5em; font-size: 1.15em; color: black; }
 .page-casestudies #__Blog__Article__Holder .article-banner-list li:last-child{ border-bottom: none; }
 .page-casestudies #__Blog__Article__Holder .article-banner-list li:before{ content: '•'; color: #f26607; display: inline-block; position: absolute; margin-top: 5px; font-size: 2em; left: 15px; margin-top: 1px; }
-.page-casestudies #__Blog__Article__Holder .article-content{ padding: 1em 0; color: #b0a1a1; font-size: 1.2em; line-height: 1.8em; }
+.page-casestudies #__Blog__Article__Holder .article-content{ padding: 1em 0; color: #212121; font-size: 1.15em; line-height: 1.8em; }
 .page-casestudies .casestudies-mini-title{ color: #e7834d; }
+.page-casestudies .article-lists{ margin-top: 1.4em; }
+.page-casestudies .article-lists li{ margin-bottom: 1em; }
 .page-casestudies .article-list-link{ display: block !important; padding: .3em;  }
 .page-casestudies .article-list-link:hover{ background-color: #e5e5e5; border-radius: 3px; }
 .page-casestudies .article-list-link .article-list-img{ width: 120px; height: 70px; overflow: hidden; padding: 2px; float: left; margin-bottom: 0; margin-top: 0; }
 .page-casestudies .article-list-link .article-list-img img{ width: 100%; height: 100%; }
-.page-casestudies .article-list-link .article-list-des{ float: left; padding: 0 .8em; color: black; font-size: 1.2em; }
+.page-casestudies .article-list-link .article-list-des{ float: left; padding: 0 .8em; color: #212121; font-size: 1.15em; }
 .page-casestudies .article-blog-details{ padding-left: 5.6em; }
 .page-casestudies .article-list-wrapper{ padding-left: 2em; }
+.page-casestudies .casestudies-title{ color: #444; }
 /* Custom Slider */
 .custom-slider .owl-controls .owl-buttons { transition: all 0.3s ease 0s; }
 .custom-slider .owl-controls .owl-buttons div { font-size: 1.2em; text-align: center; opacity: 0.8; display: inline-block; opacity: 0; background-color: white; transition: all 0.4s ease 0s; border-radius: 50%; width: 50px; height: 50px; line-height: 45px; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
