@@ -170,15 +170,13 @@ def request_callback(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
-        subject = request.POST.get('subject')
         message = request.POST.get('message')
 
         # send_mail(
-        #     subject,
         #     message,
         #     email,
         #     ['info@lightcastlebd.com'],
         #     fail_silently=False,
         # )
-        return JsonResponse({'message': 'operation successful'})
+        return JsonResponse({'message': 'success'})
 

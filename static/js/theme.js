@@ -65,7 +65,7 @@ $('#FormNewsletter').formValidation({
         data: $form.serialize(),
         dataType: 'json',
         success: function(response) {
-            if(response.message == "subscribed successfully"){
+            if(response.message == "success"){
                 var modalSuccessText = '<h3 class="text-center">Thanks for subscription</h3>';
                 $('#modal-auto').find('.modal-body').html(modalSuccessText);
                 $('#modal-auto').modal('show');    
@@ -103,6 +103,7 @@ $('#ContactForm').formValidation({
         data: $form.serialize(),
         dataType: 'json',
         success: function(response) {
+            console.log(response);
             if(response.message == "success"){
                 var modalSuccessText = '<h3 class="text-center">Thank you for your message! We hope to get back to you in 2 business days.</h3>';
                 $('#modal-auto').find('.modal-body').html(modalSuccessText);
