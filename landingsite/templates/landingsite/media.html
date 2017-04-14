@@ -24,49 +24,57 @@
             <!-- Slider -> Recognation -->
             <div class="row">
                 <div class="owl-carousel owl-theme custom-slider" id="slider_recognation">
+
                     {% for news in magazines %}
                         <div class="item">
-                            <div class="col-sm-4">
+                            {% if news.0 %}
+                                <div class="col-sm-4">
                                 <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
                                     <figure>
                                         <a href="#url" target="_blank">
-                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.0.thumb_image.url}}">
                                         </a>
                                     </figure>
                                     <!--<h4><a href="#">Project One</a></h4>-->
-                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
-                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
-                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                    <h6 style="padding: .3em .5em;">{{news.0.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.0.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.0.publish_date}}</p>
                                 </div>
                             </div>
+                            {% endif %}
 
-                            <div class="col-sm-4">
+                            {% if news.1 %}
+                                <div class="col-sm-4">
                                 <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
                                     <figure>
                                         <a href="#url" target="_blank">
-                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.1.thumb_image.url}}">
                                         </a>
                                     </figure>
                                     <!--<h4><a href="#">Project One</a></h4>-->
-                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
-                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
-                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                    <h6 style="padding: .3em .5em;">{{news.1.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.1.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.1.publish_date}}</p>
                                 </div>
                             </div>
+                            {% endif %}
 
-                            <div class="col-sm-4">
+                            {% if news.2 %}
+                                <div class="col-sm-4">
                                 <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
                                     <figure>
                                         <a href="#url" target="_blank">
-                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.2.thumb_image.url}}">
                                         </a>
                                     </figure>
                                     <!--<h4><a href="#">Project One</a></h4>-->
-                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
-                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
-                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                    <h6 style="padding: .3em .5em;">{{news.2.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.2.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.2.publish_date}}</p>
                                 </div>
                             </div>
+                            {% endif %}
+
                         </div>
                     {% endfor %}
                 </div>
@@ -90,47 +98,69 @@
                 <div class="owl-carousel owl-theme custom-slider" id="slider_knowledge">
                     {% for news in op_eds %}
                         <div class="item">
+                        {% if news.0 %}
                             <div class="col-sm-4">
                                 <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
                                     <figure>
                                         <a href="#url" target="_blank">
-                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.0.thumb_image.url}}">
                                         </a>
                                     </figure>
                                     <!--<h4><a href="#">Project One</a></h4>-->
-                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
-                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
-                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                    <h6 style="padding: .3em .5em;">{{news.0.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.0.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.0.publish_date}}</p>
                                 </div>
                             </div>
+                        {% endif %}
+                        {% if news.1 %}
+                            <div class="col-sm-4">
+                                <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
+                                    <figure>
+                                        <a href="#url" target="_blank">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.1.thumb_image.url}}">
+                                        </a>
+                                    </figure>
+                                    <!--<h4><a href="#">Project One</a></h4>-->
+                                    <h6 style="padding: .3em .5em;">{{news.1.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.1.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.1.publish_date}}</p>
+                                </div>
+                            </div>
+                        {% endif %}
 
+                        {% if news.2 %}
                             <div class="col-sm-4">
                                 <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
                                     <figure>
                                         <a href="#url" target="_blank">
-                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.2.thumb_image.url}}">
                                         </a>
                                     </figure>
                                     <!--<h4><a href="#">Project One</a></h4>-->
-                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
-                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
-                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                    <h6 style="padding: .3em .5em;">{{news.2.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.2.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.2.publish_date}}</p>
                                 </div>
                             </div>
+                        {% endif %}
 
-                            <div class="col-sm-4">
+                            {% if news.3 %}
+                                <div class="col-sm-4">
                                 <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
                                     <figure>
                                         <a href="#url" target="_blank">
-                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.3.thumb_image.url}}">
                                         </a>
                                     </figure>
                                     <!--<h4><a href="#">Project One</a></h4>-->
-                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
-                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
-                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                    <h6 style="padding: .3em .5em;">{{news.3.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.3.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.3.publish_date}}</p>
                                 </div>
                             </div>
+                            {% endif %}
+
                         </div>
                     {% endfor %}
                 </div>
@@ -154,47 +184,54 @@
                 <div class="owl-carousel owl-theme custom-slider" id="slider_interview">
                     {% for news in interviews %}
                         <div class="item">
+                        {% if news.0 %}
                             <div class="col-sm-4">
                                 <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
                                     <figure>
                                         <a href="#url" target="_blank">
-                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.0.thumb_image.url}}">
                                         </a>
                                     </figure>
                                     <!--<h4><a href="#">Project One</a></h4>-->
-                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
-                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
-                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                    <h6 style="padding: .3em .5em;">{{news.0.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.0.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.0.publish_date}}</p>
                                 </div>
                             </div>
+                        {% endif %}
 
+                        {% if news.1 %}
                             <div class="col-sm-4">
                                 <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
                                     <figure>
                                         <a href="#url" target="_blank">
-                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.1.thumb_image.url}}">
                                         </a>
                                     </figure>
                                     <!--<h4><a href="#">Project One</a></h4>-->
-                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
-                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
-                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                    <h6 style="padding: .3em .5em;">{{news.1.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.1.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.1.publish_date}}</p>
                                 </div>
                             </div>
+                        {% endif %}
 
+                        {% if news.2 %}
                             <div class="col-sm-4">
                                 <div class="ta-portfolio-box zoomIn animated" style="padding-bottom: 5px;">
                                     <figure>
                                         <a href="#url" target="_blank">
-                                            <img alt="portfolio1" class="img-responsive" src="{{news.thumb_image.url}}">
+                                            <img alt="portfolio1" class="img-responsive" src="{{news.2.thumb_image.url}}">
                                         </a>
                                     </figure>
                                     <!--<h4><a href="#">Project One</a></h4>-->
-                                    <h6 style="padding: .3em .5em;">{{news.title}}</h6>
-                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.author}}</p>
-                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.publish_date}}</p>
+                                    <h6 style="padding: .3em .5em;">{{news.2.title}}</h6>
+                                    <p class="text-light-dark" style="margin-bottom:0px">{{news.2.author}}</p>
+                                    <p style="margin-bottom:0px; font-size: 11px; color: #777">{{news.2.publish_date}}</p>
                                 </div>
                             </div>
+                        {% endif %}
+
                         </div>
                     {% endfor %}
                 </div>

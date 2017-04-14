@@ -94,12 +94,46 @@ def media_view(request):
 
     op_eds_slider_count = range(1, (len(op_eds) % 6) + 1)
 
+    magazines_slider_group = []
+    for i in range(0, len(magazines), 3):
+        if (len(magazines) - i) >= 3:
+            tuple = (magazines[i], magazines[i+1], magazines[i+2])
+        elif (len(magazines) - i) == 2:
+            tuple = (magazines[i], magazines[i + 1])
+        if (len(magazines) - i) == 1:
+            tuple = (magazines[i])
+
+        magazines_slider_group.append(tuple)
+
+
+    op_eds_slider_group = []
+    for i in range(0,len(op_eds),3):
+        if (len(op_eds) - i) >= 3:
+            tuple = (op_eds[i], op_eds[i+1], op_eds[i+2])
+        elif (len(op_eds) - i) == 2:
+            tuple = (op_eds[i], op_eds[i + 1])
+        if (len(op_eds) - i) == 1:
+            tuple = (op_eds[i])
+
+        op_eds_slider_group.append(tuple)
+
+    interviews_slider_group = []
+    for i in range(0, len(interviews), 3):
+        if (len(interviews) - i) >= 3:
+            tuple = (interviews[i], interviews[i+1], interviews[i+2])
+        elif (len(interviews) - i) == 2:
+            tuple = (interviews[i], interviews[i + 1])
+        if (len(interviews) - i) == 1:
+            tuple = (interviews[i])
+
+        interviews_slider_group.append(tuple)
+
     return render(request=request, template_name='landingsite/media.html',
                   context={
-                      'op_eds': op_eds,
+                      'op_eds': op_eds_slider_group,
                       'op_eds_slider_index' : op_eds_slider_count,
-                      'magazines' : magazines,
-                      'interviews': interviews,
+                      'magazines' : magazines_slider_group,
+                      'interviews': interviews_slider_group,
                   })
 
 
